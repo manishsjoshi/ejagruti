@@ -1,58 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Basic SideMenu - jQuery EasyUI Demo</title>
-    <link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
-    <link rel="stylesheet" type="text/css" href="../../themes/icon.css">
-    <link rel="stylesheet" type="text/css" href="../demo.css">
-    <script type="text/javascript" src="../../jquery.min.js"></script>
-    <script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Div Layout</title>
+    <link rel="stylesheet" href="resources/css/style.css">
 </head>
 <body>
-    <h2>Basic SideMenu</h2>
-    <p>Collapse the side menu to display the main icon.</p>
-    <div style="margin:20px 0;">
-        <a href="javascript:;" class="easyui-linkbutton" onclick="toggle()">Toggle</a>
+    <div id="top">
+        <div id="top-upper"></div>
+        <div id="top-lower">
+        <nav class="menu-bar">
+            <ul class="menu">
+                <li class="dropdown">
+                    <a href="#">Gen AI</a>
+                    <ul class="submenu">
+                        <li><a href="#" onclick="loadSetup()">Setup</a></li>
+                        <li><a href="#" onclick="loadExtensions()">Extensions</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
     </div>
-    <div id="sm" class="easyui-sidemenu" data-options="data:data"></div>
-    <script type="text/javascript">
-        var data = [{
-            text: 'Item1',
-            iconCls: 'icon-sum',
-            state: 'open',
-            children: [{
-                text: 'Option1'
-            },{
-                text: 'Option2'
-            },{
-                text: 'GenAI Dev',
-                children: [{
-                    text: 'Setup'
-                },{
-                    text: 'Add Extensions'
-                }]
-            }]
-        },{
-            text: 'Item2',
-            iconCls: 'icon-more',
-            children: [{
-                text: 'Option4'
-            },{
-                text: 'Option5'
-            },{
-                text: 'Option6'
-            }]
-        }];
- 
-        function toggle(){
-            var opts = $('#sm').sidemenu('options');
-            $('#sm').sidemenu(opts.collapsed ? 'expand' : 'collapse');
-            opts = $('#sm').sidemenu('options');
-            $('#sm').sidemenu('resize', {
-                width: opts.collapsed ? 60 : 200
-            })
-        }
-    </script>
+    </div>
+    <div id="bottom">
+        <div id="left"></div>
+        <div id="right"></div>
+    </div>
+    <script src="resources/js/script.js"></script>
 </body>
 </html>
