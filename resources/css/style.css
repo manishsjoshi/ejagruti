@@ -4,52 +4,194 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    background: #f5f7fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #top {
-    height: 20%;
+    height: 8%;
     width: 100%;
-    border: 2px solid red;
-    background-color: lightblue;
+    border: none;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    padding: 0 16px;
+    box-sizing: border-box;
+    gap: 20px;
 }
 
-#top-upper {
-    height: 80%;
-    width: 100%;
-    border: 1px solid darkblue;
-    background-color: lightcyan;
+.top-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex: 1;
 }
 
-#top-lower {
-    height: 20%;
-    width: 100%;
-    border: 1px solid darkred;
-    background-color: lightcoral;
+.top-logo {
+    width: 50px;
+    height:50px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+    /*filter: brightness(0) invert(1);*/
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.top-title {
+    margin: 0;
+    font-size: 1.4em;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
 }
 
 #bottom {
-    height: 80%;
+    height: 90%;
     width: 100%;
-    border: 2px solid blue;
-    background-color: lightgreen;
+    border: none;
+    background: #f5f7fa;
     display: flex;
     flex-direction: row;
+    gap: 12px;
+    padding: 12px;
+    box-sizing: border-box;
 }
 
-#left {
-    width: 20%;
+#bottom_left {
+    width: 25%;
     height: 100%;
-    border: 2px solid orange;
-    background-color: yellow;
+    border: 1px solid #e0e7ff;
+    background: white;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+    scrollbar-width: auto;
 }
 
-#right {
-    width: 80%;
+#bottom_left::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+}
+
+#bottom_left::-webkit-scrollbar-track {
+    background: #f0f2f5;
+}
+
+#bottom_left::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 4px;
+}
+
+#bottom_left::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}
+
+#bottom_right {
+    width: 75%;
     height: 100%;
-    border: 2px solid purple;
-    background-color: pink;
+    border: 1px solid #e0e7ff;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+#footer {
+    height: 2%;
+    width: 100%;
+    border: none;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 -4px 15px rgba(102, 126, 234, 0.2);
+}
+
+.course-tree {
+    width: 100%;
+}
+
+.tree-view,
+.tree-view ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 16px;
+}
+
+.tree-view > li {
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1.05em;
+    cursor: pointer;
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f0f4ff 0%, #f5e7ff 100%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+    width: 90%;
+    border-left: 4px solid #667eea;
+    box-shadow: 0 2px 4px rgba(102, 126, 234, 0.1);
+}
+
+.tree-view > li:hover {
+    background: linear-gradient(135deg, #e8edff 0%, #ece4ff 100%);
+    transform: translateX(4px);
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.2);
+}
+
+.tree-view li li {
+    margin: 8px 0;
+    font-weight: 400;
+    color: #555;
+}
+
+.tree-view a {
+    color: #667eea;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    display: block;
+    font-weight: 500;
+}
+
+.tree-view a:hover {
+    background-color: #f0f4ff;
+    color: #764ba2;
+    transform: translateX(2px);
+}
+
+.tree-view li::before {
+    content: "▼";
+    display: inline-block;
+    width: 1.2em;
+    color: #667eea;
+    margin-right: 8px;
+    transition: transform 0.3s;
+    font-size: 0.9em;
+}
+
+.tree-view li.collapsed::before {
+    content: "▶";
+    transform: none;
+}
+
+.tree-view li li::before {
+    display: none;
+}
+
+.tree-view ul {
+    display: block;
+}
+
+.tree-view li.collapsed ul {
+    display: none;
 }
 
 /* Menu Bar Styles */
@@ -116,4 +258,13 @@ body {
 
 .submenu a:hover {
     background-color: #444;
+}
+
+/* Hide scrollbars */
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    scrollbar-width: none;
 }
