@@ -1,4 +1,4 @@
-// Simple script for the layout page
+// Simple script for the layout page0
 console.log('Layout page loaded');
 
 document.addEventListener('DOMContentLoaded', function() {
